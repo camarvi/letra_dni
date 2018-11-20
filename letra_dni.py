@@ -28,9 +28,19 @@ bntCalcular.grid(row=0, column=2)
 def calculaLetra():
 
     listaLetras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E']
-    dni = int(datoPantalla.get())
-    resultado = dni%23
+    try:
+        dni = int(datoPantalla.get())
+        resultado = dni % 23
 
-    datoPantalla.set(datoPantalla.get() + '-' + listaLetras[resultado])
+        datoPantalla.set(datoPantalla.get() + '-' + listaLetras[resultado])
+
+    except TypeError:
+
+        print("Error Dato No valido")
+
+    except:
+
+        print("Error inesperado")
+
 
 raiz.mainloop()
